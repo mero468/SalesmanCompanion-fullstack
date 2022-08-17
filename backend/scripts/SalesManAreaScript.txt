@@ -1,0 +1,36 @@
+
+    Rami = Salesman(FullName="Rami", Age='28', Address="Amman,Jordan")
+    Mohammed = Salesman(FullName="Mohammad", Age='28', Address="Amman,Jordan")
+    Osama = Salesman(FullName="Osama", Age='28', Address="Amman,Jordan")
+    Qusai = Salesman(FullName="Qusai", Age='28', Address="Amman,Jordan")
+    Ahmad = Salesman(FullName="Ahmad", Age='28', Address="Amman,Jordan")
+    Rami.save()
+    Mohammed.save()
+    Osama.save()
+    Qusai.save()
+    Ahmad.save()
+
+    df = pd.read_excel(xls, "Areas")
+
+    Areasdf = df.iloc[1:70, 11:12]
+    Areasarr = Areasdf.to_numpy()
+
+    for i in range(0, 18):
+        Areaobj = Area(Name=Areasarr[i][0], SalesmanRep=Salesman.objects.filter(Id=1)[0])
+        Areaobj.save()
+
+    for i in range(18, 30):
+        Areaobj = Area(Name=Areasarr[i][0], SalesmanRep=Salesman.objects.filter(Id=2)[0])
+        Areaobj.save()
+
+    for i in range(30, 39):
+        Areaobj = Area(Name=Areasarr[i][0], SalesmanRep=Salesman.objects.filter(Id=3)[0])
+        Areaobj.save()
+
+    for i in range(39, 50):
+        Areaobj = Area(Name=Areasarr[i][0], SalesmanRep=Salesman.objects.filter(Id=4)[0])
+        Areaobj.save()
+
+    for i in range(50, 68):
+        Areaobj = Area(Name=Areasarr[i][0], SalesmanRep=Salesman.objects.filter(Id=5)[0])
+        Areaobj.save()

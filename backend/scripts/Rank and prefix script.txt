@@ -1,0 +1,42 @@
+    rankdf = df.iloc[1:5, 1:2]
+    rankarr = rankdf.to_numpy()
+
+    for i in range(0, len(rankarr)):
+        Rank = Customer_Rank(Rank=rankarr[i][0])
+        Rank.save()
+
+    Predf = df.iloc[1:5, 1:2]
+    Prearr = Predf.to_numpy()
+
+    for i in range(0, len(Prearr)):
+        Pre = Customer_PRE(PRE=Prearr[i][0])
+        Pre.save()
+
+
+
+
+
+
+
+
+
+            temp = Metal(Type="nan")
+    temp.save()
+    temp = Suction(Type="nan")
+    temp.save()
+    temp = Investment(Type="nan")
+    temp.save()
+    temp = Powder(Type="nan")
+    temp.save()
+    temp = Composite(Type="nan")
+    temp.save()
+    temp = Scanner(IOR="nan")
+    temp.save()
+    temp = MZ_Machine(MachineType="nan")
+    temp.save()
+    temp = Furnace_Poreclains(Poreclain="nan")
+    temp.save()
+    temp = Furnace_Press(Press="nan")
+    temp.save()
+    temp = Furnace_Sintering(Sintering="nan")
+    temp.save()

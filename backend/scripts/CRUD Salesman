@@ -1,0 +1,56 @@
+# @api_view(['GET'])
+# def salesman_details(request, pk):
+#     """
+#     Retrieve salesman details
+#     """
+#     try:
+#         salesman = Salesman.objects.get(pk=pk)
+#     except Salesman.DoesNotExist:
+#         return HttpResponse(status=404)
+#
+#     if request.method == 'GET':
+#         serializer = SalesmanSerializer(salesman)
+#         return JsonResponse(serializer.data)
+#
+#
+# @api_view(['POST'])
+# def Salesman_update(request, pk):
+#     """
+#     update a Salesman.
+#     """
+#     try:
+#         salesman = Salesman.objects.get(Id=pk)
+#     except Salesman.DoesNotExist:
+#         return HttpResponse(status=404)
+#     serializer = SalesmanSerializer(instance=salesman, data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#         return JsonResponse(serializer.data)
+#     else:
+#         return JsonResponse(serializer.errors, status=400)
+#
+#
+# @api_view(['DELETE'])
+# def Salesman_delete(request, pk):
+#     """
+#     Delete a Salesman.
+#     """
+#     try:
+#         salesman = Salesman.objects.get(pk=pk)
+#         salesman.delete()
+#         return Response("Salesman Deleted successfully")
+#     except Salesman.DoesNotExist:
+#         return HttpResponse(status=404)
+#
+#
+# @api_view(['POST'])
+# def Salesman_create(request):
+#     """
+#     List all Salesman , or create a new Salesman.
+#     """
+#     serializer = SalesmanSerializer(data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#         return Response(serializer.data)
+#     else:
+#         return JsonResponse(serializer.errors, status=400)

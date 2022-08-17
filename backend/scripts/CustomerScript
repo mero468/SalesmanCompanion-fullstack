@@ -1,0 +1,20 @@
+
+    ######## Customers ##########
+    df = pd.read_excel(xls, "Customer Data")
+    Customerdf = df.iloc[1:1083, 0:18]
+    Customerarr = Customerdf.to_numpy()
+
+    # print(Location)
+    for i in range(0, len(Customerarr)):
+        if(len(Area.objects.filter(Name=Customerarr[i][0])) == 0):
+            Areatemp = Area(Name=Customerarr[i][0],SalesmanRep=Salesman.objects.filter(Id=6)[0])
+            Areatemp.save()
+        Customerobj = Customer(PRE=Customer_PRE.objects.filter(PRE=Customerarr[i][1])[0],
+        Name=Customerarr[i][2], Rank=Customer_Rank.objects.filter(Rank=Customerarr[i][3])[0],
+        Salesman=Salesman.objects.filter(FullName=Customerarr[i][4])[0],
+        Phone=Customerarr[i][5], Jan=Customerarr[i][6], Feb=Customerarr[i][7], Mar=Customerarr[i][8],
+        Apr=Customerarr[i][9], May=Customerarr[i][10], June=Customerarr[i][11],
+        July=Customerarr[i][12], Aug=Customerarr[i][13], Sep=Customerarr[i][14],
+        Oct=Customerarr[i][15], Nov=Customerarr[i][16], Dec=Customerarr[i][17],
+        Location=Area.objects.filter(Name=Customerarr[i][0])[0])
+        Customerobj.save()

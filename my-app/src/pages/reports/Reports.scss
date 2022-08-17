@@ -1,0 +1,60 @@
+
+.Reports {
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    .logo{
+      height: 60px;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .ReportsContainer {
+      flex: 6;
+      background-color: rgb(250, 253, 255);
+      h3{
+        color: #6a5589;
+      }    
+      .text-primary{
+        color: #6a5589 !important;
+      }   
+      body{
+        background-color: #f8f9fa!important;
+      }
+      td {
+        min-width: 200px;
+        max-width: 300px;
+        overflow: hidden;
+      }
+    .table>:not(caption)>*>* {
+        padding: 1rem 1rem;
+    }
+    
+    .btn-primary{
+        background-color: #6a5589;
+    }
+    .bg-white {
+        background-color: #ffffff !important;
+    }
+    .p-4 {
+        padding: 1.5rem!important;
+    }
+    .mb-0, .my-0 {
+        margin-bottom: 0!important;
+    }
+    .shadow-sm {
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    }
+    .page-item.active .page-link {
+        z-index: 3;
+        color: #fff;
+        background-color: #6a5589;
+        border-color: #725d92;
+    }
+    .page-link{
+        color: #6a5589;
+    }
+
+  }
+}
+
+  

@@ -1,0 +1,18 @@
+.Profile {
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+
+    .ProfileContainer {
+      flex: 6;
+      background-color: rgb(250, 253, 255);
+      h3{
+        color: #6a5589;
+      }       
+      .profilepic{
+        max-height: 300px;
+        max-width: 300px;
+      }
+    }
+}
+
+  

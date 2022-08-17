@@ -1,0 +1,102 @@
+    # from bidi.algorithm import get_display
+    pd.set_option('display.max_columns', None)  # or 1000
+    pd.set_option('display.max_rows', None)  # or 1000
+    pd.set_option('display.max_colwidth', None)  # or 199
+
+    # read the file
+    xls = pd.ExcelFile('.. /../Daily Report - 2022.xlsx')
+
+
+     df = pd.read_excel(xls, "DropTist")
+
+    MillingMachinedf = df.iloc[1:11, 2:3]
+    MillingMachinearr = MillingMachinedf.to_numpy()
+
+    # Milling Init
+    for i in range(0, len(MillingMachinearr)):
+        MM = MZ_Machine(MachineType=MillingMachinearr[i][0])
+        MM.save()
+    #####################################################
+
+    Zircondf = df.iloc[1:16, 3:4]
+    Zirconarr = Zircondf.to_numpy()
+
+    # Zircon Init
+    for i in range(0, len(Zirconarr)):
+        MZz = MZ_Zircon(ZirconType=Zirconarr[i][0])
+        MZz.save()
+
+    #####################################################
+    poreclaindf = df.iloc[1:6, 4:5]
+    poreclainarr = poreclaindf.to_numpy()
+
+    ############## Poreclain init #######################
+    for i in range(0, len(poreclainarr)):
+        Poreclain = Furnace_Poreclains(Poreclain=poreclainarr[i][0])
+        Poreclain.save()
+
+    #####################################################
+    pressdf = df.iloc[1:6, 5:6]
+    pressdarr = pressdf.to_numpy()
+
+    ############## Press_Init_ #######################
+    for i in range(0, len(pressdarr)):
+        Press = Furnace_Press(Press=pressdarr[i][0])
+        Press.save()
+    #####################################################
+
+    sinteringdf = df.iloc[1:7, 6:7]
+    sinteringarr = sinteringdf.to_numpy()
+    ############## Sintering_Init_ #######################
+    for i in range(0, len(sinteringarr)):
+        Sintering = Furnace_Sintering(Sintering=sinteringarr[i][0])
+        Sintering.save()
+
+    #####################################################
+
+    suctiontypedf = df.iloc[1:3, 7:8]
+    suctiontypearr = suctiontypedf.to_numpy()
+
+    ############## Suction_Init_ #######################
+    for i in range(0, len(suctiontypearr)):
+        Suctionobj = Suction(Type=suctiontypearr[i][0])
+        Suctionobj.save()
+    #####################################################
+
+    IORdf = df.iloc[1:14, 8:9]
+    IORarr = IORdf.to_numpy()
+
+    ############## Scanner_Init_ #######################
+    for i in range(0, len(IORarr)):
+        IOR = Scanner(IOR=IORarr[i][0])
+        IOR.save()
+
+    #####################################################
+
+    Powdertypedf = df.iloc[1:10, 9:10]
+    Powdertypearr = Powdertypedf.to_numpy()
+
+    ############## Powder_Init_ #######################
+    for i in range(0, len(Powdertypearr)):
+        Powderobj = Powder(Type=Powdertypearr[i][0])
+        Powderobj.save()
+    #####################################################
+
+    Investmenttypedf = df.iloc[1:8, 10:11]
+    Investmenttypearr = Investmenttypedf.to_numpy()
+
+    ############## Investment_Init_ #######################
+    for i in range(0, len(Investmenttypearr)):
+        Investmentobj = Investment(Type=Investmenttypearr[i][0])
+        Investmentobj.save()
+    #####################################################
+
+    CompositeTypedf = df.iloc[1:31, 11:12]
+    CompositeTypearr = CompositeTypedf.to_numpy()
+
+    ############## Composite_Init_ #######################
+    for i in range(0, len(CompositeTypearr)):
+        Compositeobj = Composite(Type=CompositeTypearr[i][0])
+        Compositeobj.save()
+    #####################################################
+

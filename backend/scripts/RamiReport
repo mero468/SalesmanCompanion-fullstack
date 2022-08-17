@@ -1,0 +1,132 @@
+    df = pd.read_excel(xls, "Rami Jamal")
+    reportdf = df.iloc[1:510, 0:34]
+
+    reportarr = reportdf.to_numpy()
+
+    for i in range(len(reportarr)):
+        salesman = Salesman.objects.get(Id=1)
+        prefixTemp = Customer_PRE.objects.filter(PRE=reportarr[i][2])
+        pre =''
+        if len(prefixTemp) == 0:
+            pre = Customer_PRE(PRE=reportarr[i][3])
+            pre.save()
+        else:
+            pre = prefixTemp[0]
+
+        areaTemp = Area.objects.filter(Name=reportarr[i][3])
+        area=''
+        if len(areaTemp) == 0:
+            # Change according to sheet
+            area = Area(Name=reportarr[i][1], SalesmanRep=salesman)
+            area.save()
+        else:
+            area = areaTemp[0]
+
+        CustomerTemp = Customer.objects.filter(Name=reportarr[i][3])
+        customer=''
+        if len(CustomerTemp) == 0:
+            customer = Customer(Name=reportarr[i][3], Salesman=salesman, Location=area,
+                                PRE=pre,Rank=Customer_Rank.objects.get(Rank="nan"))
+            customer.save()
+        else:
+            customer = CustomerTemp[0]
+
+        zircontemp = MZ_Zircon.objects.filter(ZirconType=reportarr[i][10])
+        zirc=''
+        if len(zircontemp) == 0:
+            zirc = MZ_Zircon(ZirconType=reportarr[i][10])
+            zirc.save()
+        else:
+            zirc = zircontemp[0]
+
+        Machinetemp = MZ_Machine.objects.filter(MachineType=reportarr[i][9])
+        mach=''
+        if len(Machinetemp) == 0:
+            mach = MZ_Machine(MachineType=reportarr[i][9])
+            mach.save()
+        else:
+            mach = Machinetemp[0]
+
+        poreclain = Furnace_Poreclains.objects.filter(Poreclain=reportarr[i][13])
+        pore=''
+        if len(poreclain) == 0:
+            pore = Furnace_Poreclains(Poreclain=reportarr[i][13])
+            pore.save()
+        else:
+            pore = poreclain[0]
+
+        presses = Furnace_Press.objects.filter(Press=reportarr[i][14])
+        press=''
+        if len(presses) == 0:
+            press = Furnace_Press(Press=reportarr[i][14])
+            press.save()
+        else:
+            press = presses[0]
+
+        Sinterings = Furnace_Sintering.objects.filter(Sintering=reportarr[i][15])
+        sint=''
+        if len(Sinterings) == 0:
+            sint = Furnace_Sintering(Sintering=reportarr[i][15])
+            sint.save()
+        else:
+            sint = Sinterings[0]
+
+        Suctionn = Suction.objects.filter(Type=reportarr[i][16])
+        suc=''
+        if len(Suctionn) == 0:
+            suc = Suction(Type=reportarr[i][16])
+            suc.save()
+        else:
+            suc = Suctionn[0]
+
+        Scannerr = Scanner.objects.filter(IOR=reportarr[i][18])
+        scan=''
+        if len(Scannerr) == 0:
+            scan = Scanner(IOR=reportarr[i][18])
+            scan.save()
+        else:
+            scan = Scannerr[0]
+
+        Investmentt = Investment.objects.filter(Type=reportarr[i][21])
+        Invest=''
+        if len(Investmentt) == 0:
+            Invest = Investment(Type=reportarr[i][21])
+            Invest.save()
+        else:
+            Invest = Investmentt[0]
+
+        Metals = Metal.objects.filter(Type=reportarr[i][24])
+        metal=''
+        if len(Metals) == 0:
+            metal = Metal(Type=reportarr[i][24])
+            metal.save()
+        else:
+            metal = Metals[0]
+
+        Powders = Powder.objects.filter(Type=reportarr[i][27])
+        powder=''
+        if len(Powders) == 0:
+            powder = Powder(Type=reportarr[i][27])
+            powder.save()
+        else:
+            powder = Powders[0]
+
+        Compis = Composite.objects.filter(Type=reportarr[i][30])
+        comp=''
+        if len(Compis) == 0:
+            comp = Composite(Type=reportarr[i][30])
+            comp.save()
+        else:
+            comp = Compis[0]
+
+        ReportObj = Report(Date=reportarr[i][0],Area=area,Customer=customer,Salesman=Salesman.objects.get(Id=1),
+                           Notes=reportarr[i][6],NextAct=reportarr[i][8],MZ_Zircon=zirc,MZ_Machine=mach,
+                           Mz_Price=reportarr[i][11],Mz_AvgMonths=reportarr[i][12],Furnace_Sintering=sint,Furnace_Press=press,
+                           Furnace_Poreclains=pore,Suction=suc,Suction_Price=reportarr[i][17],Scanner=scan,
+                           Scanner_Price=reportarr[i][19],Scanner_Labscanner=reportarr[i][20],Investment=Invest,
+                           Investment_Price=reportarr[i][22],Investment_AvgMonths=reportarr[i][23],Metal=metal
+                           ,Metal_Gram=reportarr[i][25],Metal_Price=reportarr[i][26],Powder=powder,
+                           Powder_Gram=reportarr[i][28],Powder_Price=reportarr[i][29],Comp=comp,
+                           Comp_Gram=reportarr[i][31],Comp_Price=reportarr[i][32])
+
+        ReportObj.save()

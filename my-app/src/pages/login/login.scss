@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+.login-page{
+    background-image: url('BACK3.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0ch;
+
+}
+.container-fluid {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: #6a5589;
+    font-size: 15px;
+}
+span{
+    font-size: 15px;
+    color: #5a3d87 !important;
+
+}
+
+.form-right i {
+    font-size: 10px;
+}
+.bg-light{
+    background-color: #F2F8FD;
+}
+.form-check-input:checked {
+    background-color: #6a5589;
+    border-color: #6a5589;
+}
+h2{
+    color: #f3fbfb;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h3{
+    color: #9aa5b8;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+label{
+    color: #9aa5b8;
+    font-size: 12px;
+    font-weight: 300;
+}
+.bg-secondary{
+    background-color: #f2f8fd !important;
+}
+.header-cont{
+    background-color: #6a5589 !important;
+
+}
+
+i{
+    color: #5a3d87 !important;
+}
+
+.btn-primary{
+    background-color: #6a5589;
+}
