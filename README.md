@@ -5,9 +5,7 @@ Fullstack application using React and Django rest Api with libraries such as Djo
 
 The goal of this project is to provide minimalistic django project template that everyone can use, which _just works_ out of the box and has the basic setup you can expand on. 
 
-# USAGE
-
-## Activation of the backend
+# Activation of the backend
 To make the api run in the background open a new terminal and write the following:
  # Clone secrets and fablib repositories
      cd backend
