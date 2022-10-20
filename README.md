@@ -7,7 +7,7 @@ The goal of this project is to provide minimalistic django project template that
 
 # Activation of the backend
 To make the api run in the background open a new terminal and write the following:
- # Clone secrets and fablib repositories
+#
      cd backend
      venv\scripts\activate
      cd SalesmanManager
