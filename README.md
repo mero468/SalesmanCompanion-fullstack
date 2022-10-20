@@ -23,3 +23,9 @@ Make sure that you have access to a PostgreSQl database you can change that in t
 
 # After DOING ALL OF THAT Enter the following in the terminal
     python manage.py runserver
+
+# Activation of the Front-end 
+Open a new Terminal and go to the project's main folder
+#
+    cd my-app
+    npm start
